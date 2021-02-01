@@ -1,36 +1,37 @@
 <template>
   <div>
-    <Todos :todos="todos" />
+    <Todo :todos="todos"/>
   </div>
 </template>
 
 <script>
-import Todos from "./components/todo";
+import Todo from "./components/todo";
 export default {
-  name : "App",
-  components : {
-    Todos
+  name: "App",
+  components: {
+    Todo,
   },
-  data(){
+  data() {
     return {
-      todos : [
-        {id : 1, title:"Home", complete:false},
-        {id : 2, title:"Agents", complete:true},
-        {id : 3, title:"Users", complete:false},
-      ]
-    }
-  }
-}
+      todos: [
+        { id: 1, title: "home", completed: true },
+        { id: 2, title: "Users", completed: false },
+        { id: 3, title: "Settings", completed: true },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-  *{
-     box-sizing: border-box;
-     margin: 0px;
-     padding: 0px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 </style>
+
