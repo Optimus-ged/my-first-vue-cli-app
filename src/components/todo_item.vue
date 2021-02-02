@@ -1,21 +1,18 @@
 <template>
-  <div class="todo-item">
-    <p>{{ todo.title }}</p>
-  </div>
+  <h3 class="todo-item">{{ todo.title }}</h3>
 </template>
 
 <script>
 export default {
-  name: "TodoItem",
-  props: ["todo"],
-  components: {},
-};
+  name:"TodoItem",
+  props:["todo"]
+}
 </script>
 
-<style>
-.todo-item {
-  padding: 10px;
-  background: white;
-  border-bottom: pink dotted;
-}
+<style scoped>
+  .todo-item{
+    background-color: white;
+    border-bottom: grey dotted;
+    padding: 10px;
+  }
 </style>

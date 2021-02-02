@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Todo :todos="todos"/>
+    <Todo :todos="todos" />
   </div>
 </template>
 
@@ -14,9 +14,11 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1, title: "home", completed: true },
-        { id: 2, title: "Users", completed: false },
-        { id: 3, title: "Settings", completed: true },
+        { id: 1, title: "Home Page", completed: true },
+        { id: 2, title: "Users", completed: true },
+        { id: 3, title: "Products", completed: false },
+        { id: 4, title: "About", completed: true },
+        { id: 5, title: "Exit", completed: false },
       ],
     };
   },
@@ -25,13 +27,12 @@ export default {
 
 <style>
 * {
-  box-sizing: border-box;
-  margin: 0px;
   padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>
-
