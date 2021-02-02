@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Todo :todos="todos" />
+    <Todo :todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
         { id: 5, title: "Exit", completed: false },
       ],
     };
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
   },
 };
 </script>

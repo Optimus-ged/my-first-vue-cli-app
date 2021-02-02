@@ -2,6 +2,7 @@
   <h3 class="todo-item" :class="{ 'is-complete': todo.completed }">
     <input type="checkbox" v-on:change="markComplete" />
     {{ todo.title }}
+    <button class="del" @click="$emit('del-todo', todo.id)">x</button>
   </h3>
 </template>
 
@@ -25,5 +26,13 @@ export default {
 }
 .is-complete {
   text-decoration: line-through;
+}
+
+.del {
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  background: #fa000f;
+  float: right;
 }
 </style>
