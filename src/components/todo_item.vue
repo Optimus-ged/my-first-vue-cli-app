@@ -1,9 +1,9 @@
 <template>
-  <h3 class="todo-item" :class="{ 'is-complete': todo.completed }">
+  <p class="todo-item" :class="{ 'is-complete': todo.completed }">
     <input type="checkbox" v-on:change="markComplete" />
     {{ todo.title }}
     <button class="del" @click="$emit('del-todo', todo.id)">x</button>
-  </h3>
+  </p>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
   background-color: white;
   border-bottom: grey dotted;
   padding: 10px;
+  font-size: 13;
 }
 .is-complete {
   text-decoration: line-through;
