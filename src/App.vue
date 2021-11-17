@@ -1,18 +1,38 @@
 <template>
-  <Button :btn-text="text" :option="option" />
+  <div>
+    <Header />
+    <AddTodo />
+    <Todo :todos="todos" v-on:del-todo="deleteTodo" />
+  </div>
 </template>
 
 <script>
-import Button from "./components/Button.vue";
+import Header from "./components/layout/header";
+import AddTodo from "./components/add_todo";
+import Todo from "./components/todo";
 export default {
   name: "App",
   components: {
-    Button,
+    Header,
+    Todo,
+    AddTodo
   },
-  data: () => ({
-    text: "Ouais ca marche",
-    option: "tokos ",
-  }),
+  data() {
+    return {
+      todos: [
+        { id: 1, title: "Home Page", completed: false },
+        { id: 2, title: "Users", completed: false },
+        { id: 3, title: "Products", completed: false },
+        { id: 4, title: "About", completed: false },
+        { id: 5, title: "Exit", completed: false },
+      ],
+    };
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
+  },
 };
 </script>
 
