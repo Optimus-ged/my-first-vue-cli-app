@@ -1,5 +1,5 @@
 <template>
-  <Button :btn-text="text" />
+  <Button :btn-text="text" :option="option" />
 </template>
 
 <script>
@@ -11,6 +11,7 @@ export default {
   },
   data: () => ({
     text: "Ouais ca marche",
+    option: "tokos ",
   }),
 };
 </script>
