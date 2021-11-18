@@ -1,64 +1,60 @@
 <template>
-  <div class="wrapper">
-    <nav>Navigation</nav>
-    <div class="content">
-      <div class="sidebar">sidebar</div>
-      <main>main</main>
-    </div>
-    
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-// javascript
+import HelloWorld from './components/HelloWorld';
+
 export default {
-  name: "App",
-  components: {},
-  data: () => ({}),
+  name: 'App',
+
+  components: {
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.wrapper {
-  background-color: #35363a;
-  height: 100vh;
-  widows: 100vw;
-  position: relative;
-}
-
-nav{
-  height: 70px;
-  width: 100vw;
-  background-color: red;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-
-.content{
-  display: flex;
-  margin-top: 70px;
-}
-
-.sidebar{
-  height: calc(100vh - 70px);
-  width: 400px;
-  background-color: green;
-  position: fixed;
-  top: 70px;
-}
-
-main{
-  height: 1000px;
-  flex-basis: calc((100vw - 400px));
-  background-color: aquamarine;
-  margin-left: 400px;  
-}
-</style>
