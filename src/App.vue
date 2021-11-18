@@ -1,38 +1,20 @@
 <template>
-  <div>
-    <Header />
-    <AddTodo />
-    <Todo :todos="todos" v-on:del-todo="deleteTodo" />
+  <div class="wrapper">
+    <nav>Navigation</nav>
+    <div class="content">
+      <div class="sidebar">sidebar</div>
+      <main>main</main>
+    </div>
+    
   </div>
 </template>
 
 <script>
-import Header from "./components/layout/header";
-import AddTodo from "./components/add_todo";
-import Todo from "./components/todo";
+// javascript
 export default {
   name: "App",
-  components: {
-    Header,
-    Todo,
-    AddTodo
-  },
-  data() {
-    return {
-      todos: [
-        { id: 1, title: "Home Page", completed: false },
-        { id: 2, title: "Users", completed: false },
-        { id: 3, title: "Products", completed: false },
-        { id: 4, title: "About", completed: false },
-        { id: 5, title: "Exit", completed: false },
-      ],
-    };
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-    },
-  },
+  components: {},
+  data: () => ({}),
 };
 </script>
 
@@ -41,9 +23,42 @@ export default {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.wrapper {
+  background-color: #35363a;
+  height: 100vh;
+  widows: 100vw;
+  position: relative;
+}
+
+nav{
+  height: 70px;
+  width: 100vw;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.content{
+  display: flex;
+  margin-top: 70px;
+}
+
+.sidebar{
+  height: calc(100vh - 70px);
+  width: 400px;
+  background-color: green;
+  position: fixed;
+  top: 70px;
+}
+
+main{
+  height: 1000px;
+  flex-basis: calc((100vw - 400px));
+  background-color: aquamarine;
+  margin-left: 400px;  
 }
 </style>
